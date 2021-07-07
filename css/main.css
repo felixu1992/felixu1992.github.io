@@ -1913,7 +1913,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff16ff;
+  background: #c83d25;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2032,6 +2032,10 @@ pre .javascript .function {
 }
 .footer-inner {
   text-align: center;
+}
+.copyright .delimiter {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .with-love {
   display: inline-block;

@@ -90,7 +90,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="UML, 类图">
+  <meta name="keywords" content="Static, Refactor, Spring">
 
 
 
@@ -106,29 +106,18 @@
 
 
 
-<meta name="description" content="想必作为一个程序猿，UML 应该都不陌生吧，毕竟随处可见，什么时序图、类图等等，在平常设计方案或者学习一下源码的时候应该都会常常用到。">
-<meta name="keywords" content="UML, 类图">
+<meta name="description" content="Static 应该是 Java 中一个比较常用也比较基础的知识了，然而在实际应用中是否真的能够正确合理的使用它，好像也不是那么绝对">
+<meta name="keywords" content="Static, Refactor, Spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UML类图简介">
-<meta property="og:url" content="https://blogs.felixu.top/2020/04/15/design-pattern-2020-04-15-UML简介/index.html">
+<meta property="og:title" content="一次重构引发的对 Static 的探讨">
+<meta property="og:url" content="https://blogs.felixu.top/2021/07/05/work-2021-07-05-一次重构引发的对Static的探讨/index.html">
 <meta property="og:site_name" content="felixu">
-<meta property="og:description" content="想必作为一个程序猿，UML 应该都不陌生吧，毕竟随处可见，什么时序图、类图等等，在平常设计方案或者学习一下源码的时候应该都会常常用到。">
+<meta property="og:description" content="Static 应该是 Java 中一个比较常用也比较基础的知识了，然而在实际应用中是否真的能够正确合理的使用它，好像也不是那么绝对">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E7%B1%BB.jpg">
-<meta property="og:image" content="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E6%8E%A5%E5%8F%A31.jpg">
-<meta property="og:image" content="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E6%8E%A5%E5%8F%A32.jpg">
-<meta property="og:image" content="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E5%AE%9E%E7%8E%B0.jpg">
-<meta property="og:image" content="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E6%B3%9B%E5%8C%96.jpg">
-<meta property="og:image" content="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E4%BE%9D%E8%B5%96.jpg">
-<meta property="og:image" content="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E5%8F%8C%E5%90%91%E5%85%B3%E8%81%94.jpg">
-<meta property="og:image" content="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E5%8D%95%E5%90%91%E5%85%B3%E8%81%94.jpg">
-<meta property="og:image" content="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E8%81%9A%E5%90%88.jpg">
-<meta property="og:image" content="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E7%BB%84%E5%90%88.jpg">
-<meta property="og:updated_time" content="2020-11-30T11:13:50.311Z">
+<meta property="og:updated_time" content="2021-07-07T08:26:58.148Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UML类图简介">
-<meta name="twitter:description" content="想必作为一个程序猿，UML 应该都不陌生吧，毕竟随处可见，什么时序图、类图等等，在平常设计方案或者学习一下源码的时候应该都会常常用到。">
-<meta name="twitter:image" content="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E7%B1%BB.jpg">
+<meta name="twitter:title" content="一次重构引发的对 Static 的探讨">
+<meta name="twitter:description" content="Static 应该是 Java 中一个比较常用也比较基础的知识了，然而在实际应用中是否真的能够正确合理的使用它，好像也不是那么绝对">
 
 
 
@@ -156,13 +145,13 @@
 
 
 
-  <link rel="canonical" href="https://blogs.felixu.top/2020/04/15/design-pattern-2020-04-15-UML简介/">
+  <link rel="canonical" href="https://blogs.felixu.top/2021/07/05/work-2021-07-05-一次重构引发的对Static的探讨/">
 
 
 
 
 
-  <title> UML类图简介 | felixu </title>
+  <title> 一次重构引发的对 Static 的探讨 | felixu </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -447,7 +436,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://blogs.felixu.top/2020/04/15/design-pattern-2020-04-15-UML简介/">
+  <link itemprop="mainEntityOfPage" href="https://blogs.felixu.top/2021/07/05/work-2021-07-05-一次重构引发的对Static的探讨/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="felixu">
@@ -471,7 +460,7 @@
             
             
               
-                UML类图简介
+                一次重构引发的对 Static 的探讨
               
             
           </h2>
@@ -496,8 +485,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-15T00:00:00+08:00">
-                2020-04-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-07-05T00:00:00+08:00">
+                2021-07-05
               </time>
             
 
@@ -519,8 +508,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Design-Pattern/" itemprop="url" rel="index">
-                    <span itemprop="name">Design Pattern</span>
+                  <a href="/categories/Refactor/" itemprop="url" rel="index">
+                    <span itemprop="name">Refactor</span>
                   </a>
                 </span>
 
@@ -537,8 +526,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/04/15/design-pattern-2020-04-15-UML简介/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/15/design-pattern-2020-04-15-UML简介/" itemprop="commentCount"></span>
+                <a href="/2021/07/05/work-2021-07-05-一次重构引发的对Static的探讨/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/07/05/work-2021-07-05-一次重构引发的对Static的探讨/" itemprop="commentCount"></span>
                 </a>
               </span>
             <!--noindex-->
@@ -547,8 +536,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/04/15/design-pattern-2020-04-15-UML简介/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2020/04/15/design-pattern-2020-04-15-UML简介/" itemprop="commentsCount"></span>
+                <a href="/2021/07/05/work-2021-07-05-一次重构引发的对Static的探讨/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2021/07/05/work-2021-07-05-一次重构引发的对Static的探讨/" itemprop="commentsCount"></span>
                 </a>
               </span> -->
               <!--/noindex-->
@@ -559,7 +548,7 @@
 
           
           
-             <span id="/2020/04/15/design-pattern-2020-04-15-UML简介/" class="leancloud_visitors" data-flag-title="UML类图简介">
+             <span id="/2021/07/05/work-2021-07-05-一次重构引发的对Static的探讨/" class="leancloud_visitors" data-flag-title="一次重构引发的对 Static 的探讨">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -575,12 +564,12 @@
 
           
               <div class="post-description">
-                  想必作为一个程序猿，UML 应该都不陌生吧，毕竟随处可见，什么时序图、类图等等，在平常设计方案或者学习一下源码的时候应该都会常常用到。
+                  Static 应该是 Java 中一个比较常用也比较基础的知识了，然而在实际应用中是否真的能够正确合理的使用它，好像也不是那么绝对
                   
                     <br>
-                    转载请注明出处：https://blogs.felixu.top/2020/04/15/design-pattern-2020-04-15-UML简介/
+                    转载请注明出处：https://blogs.felixu.top/2021/07/05/work-2021-07-05-一次重构引发的对Static的探讨/
                     <span class="copy-article-url" title="点击复制文章链接" onclick="doCopy(this)">
-                    <i class="fa fa-clipboard" data-clipboard-text="https://blogs.felixu.top/2020/04/15/design-pattern-2020-04-15-UML简介/">
+                    <i class="fa fa-clipboard" data-clipboard-text="https://blogs.felixu.top/2021/07/05/work-2021-07-05-一次重构引发的对Static的探讨/">
                     </i>
                     <span class="sp-copy">Copy!</span>
                     </span>
@@ -607,77 +596,40 @@
       
 
       
-        <p>讲道理，<code>UML</code>总在接触，但是每次看到实在打不起兴趣好好看，总觉得略显复杂，就没有看下去的欲望，后来发现设计模式越学图越多，拉倒吧，那就记录一下这<code>UML</code>到底是个什么玩意。</p>
-<h1 id="什么是-UML"><a href="#什么是-UML" class="headerlink" title="什么是 UML"></a>什么是 UML</h1><p><strong>统一建模语言</strong>（<code>Unified Modeling Language</code>，缩写 <code>UML</code>）是非专利的第三代<a href="https://zh.wikipedia.org/w/index.php?title=对象建模语言&action=edit&redlink=1" target="_blank" rel="noopener">建模</a>和<a href="https://zh.wikipedia.org/wiki/规约语言" target="_blank" rel="noopener">规约语言</a>。<code>UML</code>是一种开放的方法，用于说明、可视化、构建和编写一个正在开发的、面向对象的、软件密集系统的制品的开放方法。<code>UML</code>展现了一系列最佳工程实践，这些最佳实践在对大规模，复杂系统进行建模方面，特别是在<a href="https://zh.wikipedia.org/wiki/软件架构" target="_blank" rel="noopener">软件架构</a>层次已经被验证有效。</p>
-<blockquote>
-<p>摘自维基百科</p>
-</blockquote>
-<p><code>UML</code>是用来设计软件蓝图的可视化建模语言，<code>1997</code> 年被国际对象管理组织(<code>OMG</code>)采纳为面向对象的建模语言的国际标准。它的特点是简单、统一、图形化、能表达软件设计中的动态与静态信息。</p>
-<p>乍一看，觉得还是挺抽象的，其实简单来说，就是用一种图形化的语言来对软件中对象关系进行建模，<code>UML</code>从目标系统的不同角度出发，定义了用例图、类图、对象图、状态图、活动图、时序图、协作图、构件图、部署图等<code>9</code>种图。</p>
-<p>这里只介绍类图，毕竟作为<code>Java coder</code>，其他的也不咋太关心，有兴趣的就自行了解其他的吧。</p>
-<h1 id="类和接口"><a href="#类和接口" class="headerlink" title="类和接口"></a>类和接口</h1><p>我们结合着一个简单的<code>Java</code>类来说</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaCode</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">private</span> Double salary;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> Double <span class="title">getSalary</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> salary;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSalary</span><span class="params">(Double salary)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.salary = salary;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>这次的问题源起于我要做一次手动<a href="https://blogs.felixu.top/2020/05/14/spring-2020-05-14-Spring-Validation%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C/">参数校验</a>，这在<code>Spring Boot</code>中，我们可以使用<code>SmartValidator</code>来进行，当有较多的地方需要做类似的操作，确实可以考虑将这手动校验的逻辑进行封装，而这次重构也正是基于其他同学的封装展开的，下面我们可以看一下代码。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SmartValidateUtil</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> SmartValidator smartValidator;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">validateAnnotation</span><span class="params">(Object object, String name)</span> <span class="keyword">throws</span> BindException </span>&#123;</span><br><span class="line">        checkSmartValidator();</span><br><span class="line">        BeanPropertyBindingResult result = <span class="keyword">new</span> BeanPropertyBindingResult(object, name);</span><br><span class="line">        smartValidator.validate(object, result);</span><br><span class="line">        <span class="keyword">if</span> (result.hasErrors()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> BindException(result);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">checkSmartValidator</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (smartValidator == <span class="keyword">null</span>)</span><br><span class="line">            smartValidator = ApplicationUtils.getBean(SmartValidator.class);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>要用<code>UML</code>表示这样一个类，该怎么画呢：</p>
-<img src="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E7%B1%BB.jpg" alt="UML类" style="zoom:50%;">
+<p>有兴趣的可以思考一下有多少不合理的地方，这里便于理解，也给出<code>ApplicationUtils#getBean(Class&lt;T&gt; type)</code>的相关代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApplicationUtils</span> <span class="keyword">implements</span> <span class="title">ApplicationContextAware</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ApplicationContext context;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setApplicationContext</span><span class="params">(@NonNull ApplicationContext applicationContext)</span> <span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">        context = applicationContext;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据 Bean 的名称获取 Bean</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title">getBean</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> context.getBean(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据 Bean 的类型获取 Bean</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">getBean</span><span class="params">(Class&lt;T&gt; type)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> context.getBean(type);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这就是一个最简单的<code>UML</code>类图了，下面我们来具体看看图上都有些个啥。</p>
-<h2 id="访问限定符"><a href="#访问限定符" class="headerlink" title="访问限定符"></a>访问限定符</h2><p>可以看到，图上有一些<code>+、-</code>这些是啥呢，这个其实就是类图中用来表示访问限定符的，有以下常用的限定符：</p>
+<h1 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h1><p>这里我依次罗列我认为有问题的地方，后续也会给出重构之后的代码，如果有不合理的地方，也欢迎指出：</p>
+<ol>
+<li><strong>既然作为工具类了，Spring 的注解在这里就显得突兀了</strong></li>
+<li><strong>变量的访问限定符</strong></li>
+<li><strong>屏蔽了原有的分组校验功能，限制功能，这不合适</strong></li>
+<li><strong>静态变量用静态方法初始化的逻辑画蛇添足</strong>(这也是争论最多的地方了)</li>
+</ol>
+<p>这里给出重构后的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SmartValidateUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> SmartValidator SMART_VALIDATOR = ApplicationUtils.getBean(SmartValidator.class);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">validate</span><span class="params">(Object target, String name, Object... validationHints)</span> <span class="keyword">throws</span> BindException </span>&#123;</span><br><span class="line">        BeanPropertyBindingResult result = <span class="keyword">new</span> BeanPropertyBindingResult(target, name);</span><br><span class="line">        <span class="keyword">if</span> (Objects.isNull(validationHints) || validationHints.length == <span class="number">0</span>)</span><br><span class="line">            SMART_VALIDATOR.validate(target, result);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            SMART_VALIDATOR.validate(target, result, validationHints);</span><br><span class="line">        <span class="keyword">if</span> (result.hasErrors()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> BindException(result);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">validate</span><span class="params">(Object target, String name)</span> <span class="keyword">throws</span> BindException </span>&#123;</span><br><span class="line">        validate(target, name, <span class="keyword">new</span> Object[<span class="number">0</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>前三点我觉得应该算是很容易理解的点了，真正的争论在于第四点。</p>
+<p>从代码中可以知道，这个<code>SmartValidator</code>来源于<code>Spring</code>的容器，很多人觉得原来的写法合理，理由如下：</p>
+<p><em>静态变量初始化的时候，Spring 的容器尚未启动，此时使用 ApplicationUtils.getBean 进行赋值，结果肯定会是 null，所以使用静态方法，在使用的时候去判断一次，如果是 null，再去容器中获取完成赋值，此时容器已经启动完成了，也就不会再为 null 了。而我的写法中，直接赋值，肯定会是 null</em></p>
+<p>然而，真的是这样吗。</p>
+<p>这里的关键其实只有一点<strong>static 修饰的变量，它是在什么时候初始化的？</strong>这其实是个很基础的问题，然而在我们日常使用的时候却常常被忽略。</p>
+<p>只要知道这个问题的答案，那么也就知道了我重构的依据，那么是什么时候初始化的呢，<strong>static 修饰的变量，在类第一次被显示使用的时候初始化</strong>(这里不会展开去说，有兴趣的可以自己找相关文章)。所以这里真正会发生什么呢？</p>
+<p><em>在整个 Spring 容器的启动过程中，ApplicationUtils.getBean(SmartValidator.class) 压根没有执行，此时的 SMART_VALIDATOR 只是分配了默认的零值，所以也就不存在从容器中获取不到而赋值为 null 的情况，而当代码中第一次使用 SmartValidateUtil#validate() 时，SMART_VALIDATOR 才会真正的去初始化，也就是此时 ApplicationUtils.getBean(SmartValidator.class) 执行，而此时 Spring 的容器一定是正常启动完成了，所以此时 getBean 得到的结果其实与原写法中的判断之后再赋值的结果是一致的</em></p>
+<p>这便是我认为使用静态方法判断之后再去赋值是脱裤子放屁多此一举的依据。</p>
+<p>当然这个是可以验证的，怎么验证呢，可以在<code>getBean</code>的逻辑中输出当前的入参，观察它什么时候输出的，很容易验证它在第一次使用<code>SmartValidateUtil</code>时执行的</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p><code>static</code>作为一个日常编码中十分常用的一个关键字，本来关于他的相关知识也十分基础，但是在实际的使用过程中，真的有注意他的一些特性吗，恐怕也并非如此。由此可见，日常编码过程中，可能还是缺乏一些对代码的思考。这个讨论在我重构完之后，在组内讨论过，同时也在一个技术交流群中讨论过，然而不乏一些经验丰富的人同样会搞错，能第一时间<code>get</code>到点的人几乎没有。但是等说到<code>static</code>什么时候初始化的，大家都懂。其实想表达什么呢，无非：</p>
 <ul>
-<li><code>+</code>：表示<code>public</code></li>
-<li><code>-</code>：表示<code>private</code></li>
-<li><code>#</code>：表示<code>protected</code></li>
-<li><code>~</code>：表示<code>default</code></li>
-<li><code>_</code>：表示<code>static</code></li>
-</ul>
-<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>上面这张图，也就对应了一个<code>Java</code>类<code>User</code>，我们可以看到它分了三个部分即</p>
-<ul>
-<li><p>类名：是一个字符串，对应我们的<code>Java</code>类名</p>
+<li><p>写代码不是想当然的，当然严谨的看问题固然好，但是也不要画蛇添足嘛，对于不确定的问题，大可以写段代码验证一下，<strong>不要懒</strong></p>
 </li>
-<li><p>属性：指类具备的一些属性，也就是我们说的类中的成员变量，它一般用以下格式表示</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[可见性] 属性名:类型[=默认值] // 默认值可有可无</span><br></pre></td></tr></table></figure>
+<li><p>适当封装是合理的，但是若非必要，不要屏蔽原有功能，降低可用性</p>
 </li>
-<li><p>方法：也称为操作，它指的是类对象的一些行为，即类的成员方法，它可以这么表示</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[可见性] 名称(参数列表):[返回值类型]</span><br></pre></td></tr></table></figure>
-
+<li><p>写代码之前尽量做到心里大致有数，不要搞的四不像，不能代码写了，以后还要被说这是哪个沙雕写的代码。</p>
 </li>
 </ul>
-<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>那接口怎么表示呢，我们看这样一个接口：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Employee</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Double <span class="title">getSalary</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>标准的<code>UML</code>图中我们用一个圆和横线来表示，如下图：</p>
-<img src="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E6%8E%A5%E5%8F%A31.jpg" alt="UML接口1" style="zoom:50%;">
-
-<p>但是在更多的使用中，我们还会用如下方式：</p>
-<img src="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E6%8E%A5%E5%8F%A32.jpg" alt="UML接口2" style="zoom:50%;">
-
-<p>这里类似上面的类，只是用<code>&lt;&lt;interface&gt;&gt;</code>来表示接口，同时没有属性列表。</p>
-<h1 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h1><p>在软件系统中，类不是孤立存在的，类与类之间存在各种关系。根据类与类之间的耦合度从弱到强排列，<code>UML</code> 中的类图有以下几种关系：依赖关系、关联关系、聚合关系、组合关系、泛化关系和实现关系。其中泛化和实现的耦合度相等，它们是最强的。</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>实现关系便是<code>Java</code>中的类实现接口的这种实现关系，它的表示方法与泛化关系类似，只是它所用的是虚线，比如我们的<code>JavaCoder</code>是一个员工接口<code>Employee</code>的实现，表示如下图：</p>
-<img src="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E5%AE%9E%E7%8E%B0.jpg" alt="UML实现" style="zoom:50%;">
-
-<h2 id="泛化"><a href="#泛化" class="headerlink" title="泛化"></a>泛化</h2><p>泛化关系其实就是我们<code>Java</code>中的继承关系，它的表示方法就是，用实线和空心三角形，由子类指向其被继承的父类，比如<code>JavaCoder</code>是<code>Coder</code>的子类，表示如下图：</p>
-<img src="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E6%B3%9B%E5%8C%96.jpg" alt="UML泛化" style="zoom:50%;">
-
-<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><p>依赖关系是一种较弱的关系，这种关系是指比如在局部变量、方法参数、静态方法调用等等这类方式使用其他类中的某些方法来完成某些功能。比如，作为一个搬砖工的我想加工资了，那么我需要用电脑发个邮件申请，这就可以理解为一种依赖关系。那么如何表示这种关系呢，就是用一个带箭头的虚线，由依赖者指向被依赖者，表示如下图：</p>
-<img src="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E4%BE%9D%E8%B5%96.jpg" alt="UML依赖" style="zoom:50%;">
-
-<h2 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h2><p>关联关系则强于依赖关系，他表示对象之间的关系是一种引用关系。关联关系又分为一般关联关系、聚合、组合。</p>
-<h3 id="一般关联关系"><a href="#一般关联关系" class="headerlink" title="一般关联关系"></a>一般关联关系</h3><p>一般的关联关系即是对象存在一种引用关系，而这种关系可以是相互的也可以是单向的。就是可以是双向关联关系，也可以是单向关联关系。比如一个咱程序汪属于某个部门，但是并不是每个部门都有程序汪，这可以理解为一种单向关联关系。再比如你今天高兴带了个实习生，那么你们之间相互产生关系，则可以理解为一种双向关联关系。单向关联用实线带箭头，由关联着指向被关联者来表示，而双向关联则是没有箭头的实线来表示，如下图：</p>
-<img src="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E5%8F%8C%E5%90%91%E5%85%B3%E8%81%94.jpg" alt="UML双向关联" style="zoom:50%;">
-
-<img src="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E5%8D%95%E5%90%91%E5%85%B3%E8%81%94.jpg" alt="UML单向关联" style="zoom:50%;">
-
-<h3 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h3><p>聚合是另一种关联关系，它是一种整体与部分的关系，比如员工之于公司，公司没了换家咱还是那个熟悉的程序汪不是，那么这种关系该如何表示呢，用空心菱形加实线，由部分指向整体，如下图所示：</p>
-<img src="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E8%81%9A%E5%90%88.jpg" alt="UML聚合" style="zoom:50%;">
-
-<h3 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h3><p>组合是一种更强的关联关系，他也是一种部分与整体的关系，但是部分不能脱离整体而存在。比如这天你又想加薪了，准备写邮件申请，总得用手写吧，手总不能自己独立去写吧，不然想想也怪可怕的。他的表示与聚合类似，只是用的为实心菱形。如下图：</p>
-<img src="https://felixu-blog.oss-cn-hangzhou.aliyuncs.com/Design%20Pattern/UML_%E7%BB%84%E5%90%88.jpg" alt="UML组合" style="zoom:50%;">
-
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>这里只是介绍了<code>UML</code>图中的类图，且只是介绍了常用的一些，更多的用法需要再实际使用过程中慢慢积累了。</p>
-<blockquote>
-<p>参考维基百科</p>
-</blockquote>
 
       
     </div>
@@ -748,7 +700,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Design-Pattern/" rel="tag"><i class="fa fa-tag"></i> Design Pattern</a>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/Spring/" rel="tag"><i class="fa fa-tag"></i> Spring</a>
+          
+            <a href="/tags/Spring-Boot/" rel="tag"><i class="fa fa-tag"></i> Spring Boot</a>
           
         </div>
       
@@ -757,8 +713,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/03/java-2020-04-03-Java8新时间API/" rel="next" title="Java8新时间API">
-                <i class="fa fa-chevron-left"></i> Java8新时间API
+              <a href="/2020/12/16/work-2020-12-16-同时使用spring-boot-starter-quartz和spring-boot-starter-websocket报错/" rel="next" title="同时使用spring-boot-starter-quartz和spring-boot-starter-websocket报错">
+                <i class="fa fa-chevron-left"></i> 同时使用spring-boot-starter-quartz和spring-boot-starter-websocket报错
               </a>
             
           </div>
@@ -766,10 +722,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/18/work-2020-04-18-调整多个ControllerAdvice的执行顺序/" rel="prev" title="调整多个ControllerAdvice的执行顺序">
-                调整多个ControllerAdvice的执行顺序 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -930,7 +882,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是-UML"><span class="nav-number">1.</span> <span class="nav-text">什么是 UML</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类和接口"><span class="nav-number">2.</span> <span class="nav-text">类和接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#访问限定符"><span class="nav-number">2.1.</span> <span class="nav-text">访问限定符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类"><span class="nav-number">2.2.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口"><span class="nav-number">2.3.</span> <span class="nav-text">接口</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类图"><span class="nav-number">3.</span> <span class="nav-text">类图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.1.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛化"><span class="nav-number">3.2.</span> <span class="nav-text">泛化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖"><span class="nav-number">3.3.</span> <span class="nav-text">依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关联"><span class="nav-number">3.4.</span> <span class="nav-text">关联</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一般关联关系"><span class="nav-number">3.4.1.</span> <span class="nav-text">一般关联关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚合"><span class="nav-number">3.4.2.</span> <span class="nav-text">聚合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组合"><span class="nav-number">3.4.3.</span> <span class="nav-text">组合</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题分析"><span class="nav-number">2.</span> <span class="nav-text">问题分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
             
 
           </div>
