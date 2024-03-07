@@ -97,20 +97,6 @@
   </url>
   
   <url>
-    <loc>https://blogs.felixu.top/tags/Quartz/</loc>
-    <lastmod>2024-03-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blogs.felixu.top/tags/WebSocket/</loc>
-    <lastmod>2024-03-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blogs.felixu.top/tags/Java/</loc>
     <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -119,6 +105,20 @@
   
   <url>
     <loc>https://blogs.felixu.top/tags/Static/</loc>
+    <lastmod>2024-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.felixu.top/tags/Quartz/</loc>
+    <lastmod>2024-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blogs.felixu.top/tags/WebSocket/</loc>
     <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
